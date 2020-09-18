@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yazılım Atölyesi API</title>
+</head>
+<body>
+{% if veri  %}
+<div class="results">
+<tbody>
+  {% for data in veri %}
+    <tr>
+      <td>Data ID = {{ data[0] }}</td>
+        <hr />
+      <td>Data Source = {{ data[1] }}</td>
+        <hr />
+        <td>Data Title = {{ data[2] }}</td>
+        <hr />
+      <td>Data Content = {{ data[3] }}</td>
+        <hr />
+       <td>Data Image = {{ data[4] }}</td>
+    </tr>
+  <hr />
+  <br>
+  {% endfor %}
+</tbody>
+</div>
+{% else %}
+<form method="POST">
+         <p>Aranacak olan kelimeyi giriniz:</p>
+         <p><input type = "text" name = "aranan" /></p>
+        <button type="submit" name="aramayap">ARA!</button>
+</form>
+{% endif %}
+</body>
+</html>

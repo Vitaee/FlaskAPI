@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yazılım Atölyesi API</title>
+</head>
+<body>
+<h4> veriler: </h4>
+<hr />
+<div class="results">
+<tbody>
+  {% for data in veri %}
+    <tr>
+
+      <td>Data ID = {{ data[0] }} <form method="POST"><button class="btn" value="{{ data[0] }}" type="submit" name="data">Bunu Sil</button></form></td>
+        <hr />
+      <td>Data Source = {{ data[1] }}</td>
+        <hr />
+        <td>Data Title = {{ data[2] }}</td>
+        <hr />
+      <td>Data Content = {{ data[3] }}</td>
+        <hr />
+       <td>Data Image = {{ data[4] }}</td>
+    </tr>
+  <hr />
+  <br>
+  {% endfor %}
+</tbody>
+</div>
+
+</body>
+</html>
